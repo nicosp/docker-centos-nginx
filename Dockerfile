@@ -1,4 +1,4 @@
-FROM qoboltd/docker-centos-php:5.6
+FROM qoboltd/docker-centos-php:7.1
 
 # Install PHP and Tools 
 RUN yum -y install --setopt=tsflags=nodocs php-fpm \
