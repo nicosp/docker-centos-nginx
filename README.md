@@ -9,12 +9,14 @@ Developed by [Qobo](https://www.qobo.biz), used in [Qobrix](https://qobrix.com).
 
 Use relevant branch for relevant PHP version
 
-Map local volume to /var/www/html and export port 80 from container to access 
+Map local volume to /var/www/html and export port 8000 from container to access 
 the served site:
 
 ```
-docker run --rm -i -v src/webroot:/var/www/html -p 8090:80 qoboltd/docker-centos-nginx:latest
+docker run --rm -i -v src/webroot:/var/www/html -p 8000:8000 qoboltd/docker-centos-nginx:latest
 ```
+
+NOTE: nginx document_root is actually set to */var/www/html/webroot*
 
 ### License
 
