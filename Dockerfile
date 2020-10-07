@@ -1,4 +1,4 @@
-FROM qoboltd/docker-centos-php:7.1
+FROM qoboltd/docker-centos-php:7.4
 
 # Install PHP and Tools 
 RUN yum -y install --setopt=tsflags=nodocs php-fpm \
@@ -13,7 +13,7 @@ COPY php.ini /etc/
 
 RUN USER=nginx && \
     GROUP=nginx && \
-    curl -SsL https://github.com/boxboat/fixuid/releases/download/v0.4/fixuid-0.4-linux-amd64.tar.gz | tar -C /usr/bin -xzf - && \
+    curl -SsL https://github.com/boxboat/fixuid/releases/download/v0.5/fixuid-0.5-linux-amd64.tar.gz | tar -C /usr/bin -xzf - && \
     chown root:root /usr/bin/fixuid && \
     chmod 4755 /usr/bin/fixuid && \
     mkdir -p /etc/fixuid && \
